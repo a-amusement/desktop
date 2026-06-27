@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self'; script-src 'self';"
+    />
+    <title>a-amusement mini-client</title>
+    <link rel="stylesheet" href="mini-client.css" />
+  </head>
+  <body>
+    <main class="client">
+      <header class="client-header">
+        <div>
+          <h1>Mini-client</h1>
+          <p>Database connection console for a-amusement.</p>
+        </div>
+        <button type="button" id="btn-test" class="primary-btn">Test connection</button>
+      </header>
+
+      <section class="status-grid" aria-label="Database target">
+        <div>
+          <span>Host</span>
+          <strong id="db-host">Loading...</strong>
+        </div>
+        <div>
+          <span>Database</span>
+          <strong id="db-name">Loading...</strong>
+        </div>
+        <div>
+          <span>User</span>
+          <strong id="db-user">Loading...</strong>
+        </div>
+        <div>
+          <span>Password</span>
+          <strong id="db-password">Loading...</strong>
+        </div>
+      </section>
+
+      <section class="result" id="result" aria-live="polite">
+        Waiting for a connection test.
+      </section>
+
+      <section class="debug-panel" aria-label="Mini-client debug log">
+        <div class="debug-title">Debug log</div>
+        <ol id="debug-log" class="debug-log"></ol>
+      </section>
+    </main>
+
+    <script src="mini-client.js"></script>
+  </body>
+</html>

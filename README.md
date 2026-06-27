@@ -1,2 +1,56 @@
-# desktop
-Official desktop clients for a-amusement, based on Electron Webview!
+# a-amusement Desktop
+
+A lightweight Windows desktop wrapper for [a-amu.uk](https://a-amu.uk) with a custom frameless titlebar styled to match the site.
+
+## Requirements
+
+- Node.js 18+
+- Windows 10/11
+
+## Development
+
+```bash
+npm install
+npm start
+```
+
+## Build installer
+
+```bash
+npm run dist
+```
+
+The packaged app is written to `dist/`.
+
+## Features
+
+- Frameless window with a custom titlebar (minimize, maximize, close)
+- Loads the live site in an embedded webview
+- Titlebar colors follow your Windows light/dark preference
+- External links open in your default browser; in-site navigation stays in the app
+- **Session persistence** — cookies and site storage are kept between app restarts
+- **Login autofill** — saved credentials are encrypted with Windows and filled on `/login.php`
+- **System tray** — closing the window hides the app; it keeps running in the tray until you quit
+- **Clear data** — titlebar button to wipe saved credentials, cookies, cache, and site storage
+
+Saved login data is stored in your app data folder and encrypted via Electron `safeStorage` (Windows DPAPI). Credentials are saved when you submit the login form and autofilled the next time you visit the login page.
+
+Use **Hide to tray** (the close button) to keep the app running in the background. Right-click the tray icon and choose **Quit** to fully exit.
+
+## Mini-client database check
+
+The titlebar mini-client button opens a small database console. It never stores the database password in source code or the packaged app. Set the password on the local machine before testing:
+
+```powershell
+$env:A_AMU_DB_PASSWORD = "your-password"
+npm start
+```
+
+Optional environment variables:
+
+- `A_AMU_DB_HOST` defaults to `a-amu.uk`
+- `A_AMU_DB_PORT` defaults to `5432`
+- `A_AMU_DB_NAME` defaults to `my_webapp__13`
+- `A_AMU_DB_USER` defaults to `my_webapp__13`
+- `A_AMU_DB_SSL` defaults to enabled; set to `disable` only for trusted local testing
+- `A_AMU_DB_CA_FILE` can point to a trusted PostgreSQL CA certificate file
