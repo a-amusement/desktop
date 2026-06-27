@@ -36,21 +36,3 @@ The packaged app is written to `dist/`.
 Saved login data is stored in your app data folder and encrypted via Electron `safeStorage` (Windows DPAPI). Credentials are saved when you submit the login form and autofilled the next time you visit the login page.
 
 Use **Hide to tray** (the close button) to keep the app running in the background. Right-click the tray icon and choose **Quit** to fully exit.
-
-## Mini-client database check
-
-The titlebar mini-client button opens a small database console. It never stores the database password in source code or the packaged app. Set the password on the local machine before testing:
-
-```powershell
-$env:A_AMU_DB_PASSWORD = "your-password"
-npm start
-```
-
-Optional environment variables:
-
-- `A_AMU_DB_HOST` defaults to `a-amu.uk`
-- `A_AMU_DB_PORT` defaults to `5432`
-- `A_AMU_DB_NAME` defaults to `my_webapp__13`
-- `A_AMU_DB_USER` defaults to `my_webapp__13`
-- `A_AMU_DB_SSL` defaults to enabled; set to `disable` only for trusted local testing
-- `A_AMU_DB_CA_FILE` can point to a trusted PostgreSQL CA certificate file
