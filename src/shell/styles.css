@@ -1,0 +1,166 @@
+/* Matches a-amu.uk /assets/css/main.css theme tokens */
+:root {
+  color-scheme: light dark;
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #d8dee9;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --titlebar-height: 40px;
+  --font-head: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+}
+
+html[data-theme="dark"] {
+  --bg: #0b0d12;
+  --surface: #141821;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --border: #2a3142;
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: var(--titlebar-height);
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-head);
+  user-select: none;
+}
+
+.titlebar {
+  display: flex;
+  align-items: stretch;
+  height: var(--titlebar-height);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.titlebar-drag {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding-left: 14px;
+  -webkit-app-region: drag;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.brand-mark {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.brand-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.titlebar-actions {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  -webkit-app-region: no-drag;
+}
+
+.action-btn {
+  appearance: none;
+  border: none;
+  margin: 0;
+  width: 38px;
+  height: var(--titlebar-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.action-btn svg {
+  width: 13px;
+  height: 13px;
+}
+
+.action-btn:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--text);
+}
+
+.action-btn.is-active {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--accent-hover);
+}
+
+.action-btn:active,
+.action-btn.is-busy {
+  opacity: 0.7;
+}
+
+.window-controls {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+  -webkit-app-region: no-drag;
+}
+
+.control-btn {
+  appearance: none;
+  border: none;
+  margin: 0;
+  width: 46px;
+  height: var(--titlebar-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.control-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+.control-btn:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--text);
+}
+
+.control-btn-close:hover {
+  background: #e81123;
+  color: #fff;
+}
+
+.hidden {
+  display: none !important;
+}

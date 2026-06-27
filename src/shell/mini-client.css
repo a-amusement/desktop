@@ -1,0 +1,161 @@
+:root {
+  color-scheme: light;
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #667085;
+  --border: #d8dee9;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --success: #047857;
+  --danger: #b42318;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.client {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 18px;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.client-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.65rem;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.primary-btn {
+  appearance: none;
+  border: none;
+  border-radius: 7px;
+  min-height: 36px;
+  padding: 0 14px;
+  background: var(--accent);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background: var(--accent-hover);
+}
+
+.primary-btn:disabled {
+  cursor: default;
+  opacity: 0.64;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.status-grid div,
+.result,
+.debug-panel {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.status-grid div {
+  min-width: 0;
+  padding: 12px;
+}
+
+.status-grid span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-grid strong {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 0.94rem;
+}
+
+.result {
+  padding: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.result.is-ok {
+  color: var(--success);
+}
+
+.result.is-error {
+  color: var(--danger);
+}
+
+.debug-panel {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.debug-title {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.debug-log {
+  height: 170px;
+  margin: 0;
+  padding: 10px 12px;
+  overflow: auto;
+  list-style: none;
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+
+.debug-log li {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 10px;
+  padding: 3px 0;
+}
+
+.debug-log time {
+  color: var(--muted);
+}

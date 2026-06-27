@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self'; script-src 'self';"
+    />
+    <title>Welcome to a-amusement desktop!</title>
+    <link rel="stylesheet" href="startup.css" />
+  </head>
+  <body>
+    <main class="startup">
+      <section class="status">
+        <div class="mark" aria-hidden="true">a</div>
+        <div>
+          <h1>Starting up...</h1>
+          <p>Welcome to a-amusement desktop!</p>
+        </div>
+      </section>
+
+      <section class="debug-panel" aria-label="Startup debug log">
+        <div class="debug-title">Debug log</div>
+        <ol id="debug-log" class="debug-log"></ol>
+      </section>
+    </main>
+
+    <script src="startup.js"></script>
+  </body>
+</html>
