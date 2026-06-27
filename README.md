@@ -1,6 +1,6 @@
 # a-amusement Desktop
 
-A lightweight Windows desktop wrapper for [a-amu.uk](https://a-amu.uk) with a custom frameless titlebar styled to match the site.
+The official desktop client for [a-amusement!](https://a-amu.uk)
 
 ## Requirements
 
