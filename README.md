@@ -2,26 +2,6 @@
 
 The official desktop client for [a-amusement!](https://a-amu.uk)
 
-## Requirements
-
-- Node.js 18+
-- Windows 10/11
-
-## Development
-
-```bash
-npm install
-npm start
-```
-
-## Build installer
-
-```bash
-npm run dist
-```
-
-The packaged app is written to `dist/`.
-
 ## Features
 
 - Frameless window with a custom titlebar (minimize, maximize, close)
@@ -36,3 +16,30 @@ The packaged app is written to `dist/`.
 Saved login data is stored in your app data folder and encrypted via Electron `safeStorage` (Windows DPAPI). Credentials are saved when you submit the login form and autofilled the next time you visit the login page.
 
 Use **Hide to tray** (the close button) to keep the app running in the background. Right-click the tray icon and choose **Quit** to fully exit.
+
+## Download
+Go to the Releases tab to download a prebuilt copy of a-amusement Desktop!
+
+# Want to build it? Here's how!
+
+### Requirements
+
+- Node.js 18+
+- Windows 10/11
+
+### Development
+
+```bash
+npm install
+npm start
+```
+
+### Build installer
+
+```bash
+npm run dist
+```
+
+The packaged app is written to `dist/`.
+
+
