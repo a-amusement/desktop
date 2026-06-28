@@ -21,6 +21,7 @@ Use **Hide to tray** (the close button) to keep the app running in the backgroun
 Go to the Releases tab to download a prebuilt copy of a-amusement Desktop!
 
 ## Want to build it? Here's how!
+Remember to git clone this repo before you start!
 
 ### Requirements
 
